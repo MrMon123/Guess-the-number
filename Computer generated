@@ -1,0 +1,28 @@
+"""
+Description: Generates a random number that the user has to guess using a range given from the user
+"""
+import random
+
+# Function that generates and checks if the user is correct
+def guess():
+    print("What range of numbers should I guess between?")
+    num_1 = int(input("Bottom of the range (whole numbers only: "))
+    num_2 = int(input("Top of the range: "))
+    ran_num = random.randint(num_1, num_2)
+    user_guess = int(input("Enter your guess here: "))
+
+    if user_guess == ran_num:
+        print("You guessed the correct number!")
+    else:
+        print("Sorry but you guessed wrong!")
+        dec = input("Would you like to try again?") == "y"
+        if dec:
+            return 1
+
+# This loop will close on its own but if the user decides to play again the loop will repeat
+i = 0
+while i == 0:
+    i += 1
+    num = guess()
+    if num == 1:
+        i -= 1
