@@ -1,0 +1,36 @@
+"""
+Description: The program will guess the users number. The user will give it a range to guess in
+"""
+# Imports
+import random
+
+# Main function that gets user input and guesses
+def guess():
+    print("Give me a range of numbers to guess in")
+    num_1 = int(input("Lowest number: "))
+    num_2 = int(input("Highest number: "))
+
+    guess = random.randint(num_1, num_2)
+    print("")
+    print("Im gonna guess your number is....")
+    print(str(guess) + "!")
+    print("")
+    dec = input("Was I correct?") == "y"
+    if dec:
+        print("Ha no way could a human beat a computer!")
+    else:
+        print("Try me again no way you'll win!")
+        dec = input("try again? ") == "y"
+        print("")
+        print("")
+        if dec:
+            return 1
+
+
+# Main loop that will end itself if the user doesn't want to continue
+i = 0
+while i == 0:
+    i += 1
+    num = guess()
+    if num == 1:
+        i -= 1
