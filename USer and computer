@@ -1,0 +1,66 @@
+"""
+Description: This contains both user and computer generated and guessing numbers
+"""
+import random
+def computer():
+    print("Give me a range of numbers to guess in")
+    num_1 = int(input("Lowest number: "))
+    num_2 = int(input("Highest number: "))
+
+    guess = random.randint(num_1, num_2)
+    print("")
+    print("Im gonna guess your number is....")
+    print(str(guess) + "!")
+    print("")
+    dec = input("Was I correct?") == "y"
+    if dec:
+        print("Ha no way could a human beat a computer!")
+    else:
+        print("Try me again no way you'll win!")
+        dec = input("try again? ") == "y"
+        print("")
+        print("")
+        if dec:
+            return 1
+
+# Function that generates and checks if the user is correct
+def user():
+    print("What range of numbers should I guess between?")
+    num_1 = int(input("Bottom of the range (whole numbers only: "))
+    num_2 = int(input("Top of the range: "))
+    ran_num = random.randint(num_1, num_2)
+    user_guess = int(input("Enter your guess here: "))
+
+    if user_guess == ran_num:
+        print("You guessed the correct number!")
+    else:
+        print("Sorry but you guessed wrong!")
+        dec = input("Would you like to try again? ") == "y"
+        print("-------------------------------------------------------------------------------------------------------")
+        print("")
+        if dec:
+            return 1
+
+
+dec = input("A) Would you like the computer to guess your number or B) the other way around? ")
+if dec == "A":
+    print("-----------------------------------------------------------------------------------------------------------")
+    print("")
+    print("*User Generated*")
+    i = 0
+    while i == 0:
+        i += 1
+        num = user()
+        if num == 1:
+            i -= 1
+
+elif dec == "B":
+    print("")
+    print("")
+    print("*Computer Generated*")
+    i = 0
+    while i == 0:
+        i += 1
+        num = computer()
+        if num == 1:
+            i -= 1
